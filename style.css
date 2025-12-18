@@ -1,0 +1,152 @@
+/* --- VARIABLES CSS --- */
+:root {
+    --primary-color: #0f172a; /* Azul oscuro elegante */
+    --accent-color: #38bdf8;  /* Azul cielo */
+    --text-color: #334155;    /* Gris oscuro para texto */
+    --bg-light: #f8fafc;      /* Blanco humo */
+    --white: #ffffff;
+}
+
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+}
+
+/* --- NAVEGACIÓN --- */
+nav {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Se queda pegado arriba al hacer scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+nav h1 { font-size: 1.5rem; font-weight: 700; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav a { text-decoration: none; color: var(--white); transition: color 0.3s; }
+nav a:hover { color: var(--accent-color); }
+
+/* --- HERO SECTION (Portada) --- */
+.hero {
+    /* Imagen de fondo de tecnología/servidores */
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1558494949-ef526b0042a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 90vh; /* 90% del alto de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 20px;
+}
+
+.hero h2 { font-size: 3rem; margin-bottom: 10px; }
+.hero p { font-size: 1.5rem; color: var(--accent-color); margin-bottom: 20px; }
+.hero .tagline { font-size: 1.1rem; max-width: 600px; opacity: 0.8; }
+
+/* --- BOTONES --- */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+.btn:hover { transform: scale(1.05); }
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* --- SECCIONES GENERALES --- */
+section { padding: 60px 10%; }
+
+.bg-alt { background-color: #e2e8f0; } /* Fondo alternativo grisáceo */
+
+h3.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- EXPERIENCIA DESTACADA --- */
+.highlight-box {
+    background: var(--white);
+    border-left: 5px solid var(--accent-color);
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.stat-item h4 { font-size: 2.5rem; color: var(--accent-color); }
+.stat-item p { font-weight: bold; }
+
+/* --- SKILLS GRID --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.skill-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+.skill-icon { font-size: 2rem; margin-bottom: 15px; }
+
+/* --- CONTACTO & FOOTER --- */
+.contact { background-color: var(--primary-color); color: var(--white); text-align: center; }
+.contact h3 { color: var(--white); }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0f172a;
+    color: #888;
+    border-top: 1px solid #1e293b;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .hero h2 { font-size: 2rem; }
+    nav ul { display: none; } /* Ocultar menú en móviles por simplicidad */
+    section { padding: 40px 5%; }
+}
